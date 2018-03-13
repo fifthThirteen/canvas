@@ -127,3 +127,42 @@ context.arc(x,y,r,sAngle,eAngle,counterclockwise);
 * eAngle:结束角，以弧度计。
 * counterclockwise:可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
 <img src="images/arc.png" title="图片来自 w3cschool" alt="arc()方法图">
+
+### 绘制直线
+```
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+var cx = canvas.width = 400;
+var cy = canvas.height = 400;
+
+context.beginPath();
+context.moveTo(50,50);
+context.lineTo(100,100);
+context.strokeStyle = '#fff';
+context.stroke();
+```
+效果图：
+<img src="images/line1.png">
+* moveTo(x,y)：把路径移动到画布中的指定点，不创建线条
+* lineTo(x,y)：添加一个新点，然后在画布中创建从该点到最后指定点的线条
+
+tips:
+* 如果没有 moveTo 那么第一次 lineTo 的就视为 moveTo
+* 每次lineTo后如果没有moveTo，那么下次lineTo的开始点为前一次lineTo的结束点。
+```
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+var cx = canvas.width = 400;
+var cy = canvas.height = 400;
+
+context.beginPath();
+context.lineTo(200, 200);
+context.lineTo(200, 100);
+context.lineTo(100,50);
+context.strokeStyle = '#fff';
+context.stroke();
+```
+我们没有设置 moveTo，而是设置了三个 lineTo，也是可以的，就是将三个 lineTo 设置的点依次连接就好~
+
+效果如下：
+<img src="images/line2.png">
