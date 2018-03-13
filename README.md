@@ -128,7 +128,7 @@ context.arc(x,y,r,sAngle,eAngle,counterclockwise);
 * counterclockwise:可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
 <img src="images/arc.png" title="图片来自 w3cschool" alt="arc()方法图">
 
-### 绘制直线
+### 绘制线条
 ```
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
@@ -166,3 +166,26 @@ context.stroke();
 
 效果如下：
 <img src="images/line2.png">
+
+### 线条样式属性
+* lineCap 设置或返回线条的结束端点样式 ```context.lineCap="butt|round|square";```
+	* 默认值butt:向线条的每个末端添加平直的边缘。
+	* round:向线条的每个末端添加圆形线帽。
+	* square:向线条的每个末端添加正方形线帽。
+* lineJoin 设置或返回两条线相交时，所创建的拐角类型```context.lineJoin="bevel|round|miter";```
+	* bevel:创建斜角。
+	* round: 创建圆角。
+	* 默认值miter: 创建尖角。
+* lineWidth 设置或返回当前的线条宽度```context.lineWidth=number;```number:当前线条的宽度，以像素计。默认值为：1
+* miterLimit 设置或返回最大斜接长度```context.miterLimit=number;```number:正数。规定最大斜接长度。如果斜接长度超过 miterLimit 的值，边角会以 lineJoin 的 "bevel" 类型来显示。默认值为10。
+`miterLimit定义和用法`
+miterLimit 属性设置或返回最大斜接长度。
+斜接长度指的是在两条线交汇处内角和外角之间的距离。
+
+<img src="iamges/miterlimit.gif" title="图片来自 w3cschool">
+tips:只有当 lineJoin 属性为 "miter" 时，miterLimit 才有效。
+边角的角度越小，斜接长度就会越大。
+为了避免斜接长度过长，我们可以使用 miterLimit 属性。
+如果斜接长度超过 miterLimit 的值，边角会以 lineJoin 的 "bevel" 类型来显示（图解 3）：
+
+<img src="iamges/miterlimit_bevel.gif"  title="图片来自 w3cschool">
