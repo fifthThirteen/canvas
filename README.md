@@ -108,3 +108,9 @@ canvas 和 svg都允许您在浏览器中创建图形，但是它们在根本上
 tips: 如果通过CSS设置的话画布会按照原始大小`300*150`的比例进行缩放，也就是会将`300*150`的页面显示在`400*400`的画布中，导致变形。
 
 ## <a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank">Canvas方法与属性</a>
+`getContext(contextType, contextAttributes)方法`
+可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。
+* 上下文类型（contextType）：
+* 	2d（本小册所有的示例都是 2d 的）：代表一个二维渲染上下文
+* 	webgl（或"experimental-webgl"）：代表一个三维渲染上下文
+* 	webgl2（或"experimental-webgl2"）：代表一个三维渲染上下文；这种情况下只能在浏览器实现 WebGL 版本2 (OpenGL ES 3.0)。
