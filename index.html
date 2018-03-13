@@ -20,11 +20,8 @@
 	var cy = canvas.height = 400;
 
 	context.beginPath();
-	context.moveTo(50,50);
-	context.lineTo(100,100);
-	context.lineWidth = 10;
-	context.lineCap = 'butt';
-	console.log(context.lineJoin);
+	context.arc(100,100,50,0,Math.PI*2,true);
+	context.closePath();
 	context.strokeStyle = "#FFF";
 	context.stroke();
 </script>

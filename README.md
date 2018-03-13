@@ -63,7 +63,48 @@ canvas 和 svg都允许您在浏览器中创建图形，但是它们在根本上
 		<td>最适合带有大型渲染区域的应用程序（比如谷歌地图）</td>
 	</tr>
 	<tr>
-		<td>图面较小，对象数量较大（`>10`）时性能最佳</td>
-		<td>对象数量较小(`< 10`)图面更大时性能更佳</td>
+		<td>图面较小，对象数量较大（> 10）时性能最佳</td>
+		<td>对象数量较小(< 10)图面更大时性能更佳</td>
 	</tr>
 </table>
+
+## Canvas应用场景
+绘制图表 小游戏 活动页面 小特效 炫酷背景 等等
+
+## 第一个Canvas画布
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400">
+
+</canvas>
+<script>
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+	var cx = canvas.width = 400;
+	var cy = canvas.height = 400;
+
+	context.beginPath();
+	context.arc(100,100,50,0,Math.PI*2,true);
+	context.closePath();
+	context.strokeStyle = "#FFF";
+	context.stroke();
+</script>
+</body>
+</html>
+```
+### 如何设置Canvas高度、宽度
+见代码，一般来说会在html标签canvas中直接设置，或者通过Javascript设置。
+tips: 如果通过CSS设置的话画布会按照原始大小`300*150`的比例进行缩放，也就是会将`300*150`的页面显示在`400*400`的画布中，导致变形。
+
+## <a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank">Canvas方法与属性</a>
