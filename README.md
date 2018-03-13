@@ -126,6 +126,6 @@ context.arc(x,y,r,sAngle,eAngle,counterclockwise);
 * sAngle:起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。
 * eAngle:结束角，以弧度计。
 * counterclockwise:可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
-<div style="text-align:center;cursor: default;">
-	<img src="images/arc.png" title="图片来自 w3cschool" alt="arc()方法图">
+<div>
+	<img src="images/arc.png" title="图片来自 w3cschool" alt="arc()方法图" style="text-align:center;cursor: default;">
 </div>
