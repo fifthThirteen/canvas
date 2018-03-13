@@ -94,11 +94,11 @@ canvas 和 svg都允许您在浏览器中创建图形，但是它们在根本上
 	var cx = canvas.width = 400;
 	var cy = canvas.height = 400;
 
-	context.beginPath();
-	context.arc(100,100,50,0,Math.PI*2,true);
-	context.closePath();
-	context.strokeStyle = "#FFF";
-	context.stroke();
+	context.beginPath(); // 起始一条路径，或重置当前路径
+	context.arc(100,100,50,0,Math.PI*2,true); // 创建弧/曲线
+	context.closePath(); // 创建从当前点回到起始点的路径
+	context.strokeStyle = "#FFF";// 设置或返回用于描边绘画的颜色、渐变或模式
+	context.stroke();// 描边当前绘图（路径）
 </script>
 </body>
 </html>
@@ -108,9 +108,24 @@ canvas 和 svg都允许您在浏览器中创建图形，但是它们在根本上
 tips: 如果通过CSS设置的话画布会按照原始大小`300*150`的比例进行缩放，也就是会将`300*150`的页面显示在`400*400`的画布中，导致变形。
 
 ## <a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank">Canvas方法与属性</a>
-`getContext(contextType, contextAttributes)方法`
+### `getContext(contextType, contextAttributes)方法`
 可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。
 * 上下文类型（contextType）：
 	* 2d（本小册所有的示例都是 2d 的）：代表一个二维渲染上下文
 	* webgl（或"experimental-webgl"）：代表一个三维渲染上下文
 	* webgl2（或"experimental-webgl2"）：代表一个三维渲染上下文；这种情况下只能在浏览器实现 WebGL 版本2 (OpenGL ES 3.0)。
+
+### 绘制弧/曲线
+arc() 方法创建弧/曲线（用于创建圆或部分圆）。
+```
+context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+```
+* x:圆的中心的 x 坐标。
+* y:圆的中心的 y 坐标。
+* r:圆的半径
+* sAngle:起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。
+* eAngle:结束角，以弧度计。
+* counterclockwise:可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
+<div style="margin:0 auto">
+	<img src="images/arc.png" title="图片来自 w3cschool" alt="arc()方法图">
+</div>
