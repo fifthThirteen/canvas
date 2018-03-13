@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400">
+
+</canvas>
+<script>
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+	var cx = canvas.width = 400;
+	var cy = canvas.height = 400;
+
+	context.beginPath();
+	context.moveTo(50,50);
+	context.lineTo(100,100);
+	context.lineWidth = 10;
+	context.lineCap = 'butt';
+	console.log(context.lineJoin);
+	context.strokeStyle = "#FFF";
+	context.stroke();
+</script>
+</body>
+</html>
