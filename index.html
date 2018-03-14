@@ -20,10 +20,17 @@
 	var cy = canvas.height = 400;
 
 	context.beginPath();
-	context.arc(100,100,50,0,Math.PI*2,true);
-	context.closePath();
-	context.strokeStyle = "#FFF";
-	context.stroke();
+	// context.fillStyle = "#FFF";
+	// context.fillRect(20,20,150,100);
+	// context.fill();
+	context.moveTo(20,20);
+	context.lineTo(100,100);
+	context.lineWidth =10;
+	var grd=context.createLinearGradient(0,0,170,0);
+grd.addColorStop(0,"black");
+grd.addColorStop(1,"white");
+	context.fillStyle = grd; //线性不能用fill,渐变矩形一般用stroke
+	context.fill();
 </script>
 </body>
 </html>
